@@ -1,0 +1,11 @@
+/*!
+ * 
+ *   simple-keyboard v3.8.64
+ *   https://github.com/hodgef/simple-keyboard
+ *
+ *   Copyright (c) Francisco Hodge (https://github.com/hodgef) and project contributors.
+ *
+ *   This source code is licensed under the MIT license found in the
+ *   LICENSE file in the root directory of this source tree.
+ *
+ */#vk{bottom:0;background:#e9ebf1;box-shadow:0 -6px 32px 0 rgba(0,0,0,0.18);display:flex;flex-direction:column;height:320px;left:0;padding:18px 8px 18px 8px;position:fixed;right:0;top:auto;z-index:10001}.hg-theme-default{background:transparent;box-shadow:none;margin:0;padding:0}.hg-theme-default .hg-row{display:flex;justify-content:center;margin-bottom:10px;gap:6px}.hg-theme-default .hg-row:last-child{margin-bottom:0}.hg-theme-default .hg-button{align-items:center;background:#fff;border:none;border-radius:14px;box-shadow:0 2px 6px 0 rgba(0,0,0,0.1);color:#222;display:flex;font-size:22px;font-weight:500;justify-content:center;margin:0 2px;min-height:48px;min-width:38px;padding:0 .5em;transition:background .15s,box-shadow .15s;user-select:none}.hg-theme-default .hg-button:active{background:#e2e6f3;box-shadow:0 1px 2px 0 rgba(0,0,0,0.1)}.hg-theme-default .hg-button[data-skbtn*="shift"],.hg-theme-default .hg-button[data-skbtn*="bksp"],.hg-theme-default .hg-button[data-skbtn*="enter"],.hg-theme-default .hg-button[data-skbtn*="lang"]{background:#f3f5fa;color:#2a5cff;font-weight:600;min-width:56px}.hg-theme-default .hg-button[data-skbtn*="space"]{background:#fff;color:#888;font-size:20px;min-width:180px}.hg-theme-default .hg-row:first-child .hg-button{font-size:20px;min-height:40px;min-width:32px}#vk .hg-theme-default{margin:0}.hg-theme-default .hg-button:focus{outline:none} 
