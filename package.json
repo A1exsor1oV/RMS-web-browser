@@ -1,14 +1,23 @@
 {
   "name": "rms-web-desktop",
-  "version": "1.0.0",
-  "main": "main.js",
+  "version": "1.6.0",
+  "description": "Киоск-браузер для сенсорных панелей RedOS",
+  "author": "Orlov Alexei",
+  "main": "bootstrap.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . RMS-Web --platform=linux,win32,darwin --arch=x64 --overwrite"
+    "build:linux": "electron-packager . RMS-Web --platform=linux --arch=arm64 --executable-name=RMS-Web --overwrite --out=release --prune=true",
+  "rpm": "TMPDIR=$HOME/rpmtmp electron-installer-redhat --src=release/RMS-Web-linux-arm64/ --dest=dist --arch=aarch64 --license=MIT --bin=RMS-Web"
   },
   "dependencies": {
+    "crypto-js": "^4.2.0",
     "electron": "^27.1.0",
     "electron-store": "^8.1.0",
-    "crypto-js": "^4.2.0"
+    "simple-keyboard": "^3.8.64"
+  },
+  "devDependencies": {
+    "electron-packager": "^17.1.1",
+    "electron": "^27.1.0",
+    "electron-installer-redhat": "latest"
   }
 }

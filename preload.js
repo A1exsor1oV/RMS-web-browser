@@ -6,3 +6,4 @@ contextBridge.exposeInMainWorld('api', {
   checkPass : pass      => ipcRenderer.invoke('pass:check', pass)
 });
 
+

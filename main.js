@@ -3,6 +3,8 @@ const path   = require('path');
 const Store  = require('electron-store');
 const Crypto = require('crypto-js');
 
+app.commandLine.appendSwitch('ozone-platform', 'wayland');
+app.commandLine.appendSwitch('enable-features', 'WaylandWindowDecorations,WaylandIme');
 app.disableHardwareAcceleration();                // на слабых GPU
 app.commandLine.appendSwitch('touch-events','enabled');
 
@@ -12,7 +14,7 @@ const store = new Store({
     passwordHash: Crypto.SHA256('admin').toString(),
     links: [
       { title: 'Яндекс', url: 'https://ya.ru/' },
-      { title: 'RMS',    url: 'http://10.0.20.113:8088/' }
+      { title: 'RMS',    url: 'https://rms-group.ru/' }
     ]
   }
 });
@@ -32,8 +34,11 @@ function createWindow () {
     }
   });
 
+  //win.webContents.openDevTools({ mode: 'detach' });
+
   Menu.setApplicationMenu(null);
   win.loadFile(path.join(__dirname, 'renderer', 'index.html'));
+  
 }
 
 app.whenReady().then(createWindow);
