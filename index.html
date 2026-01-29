@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>RMS-web</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="simplekb.css">
+  <script defer src="simplekb.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <!-- ловушка свайпа -->
+  <div id="edge"></div>
+
+  <!-- боковое меню -->
+  <aside id="sidebar" class="sidebar">
+    <header class="hdr"><h1></h1></header>
+    <nav id="linkList" class="links"></nav>
+    <footer>
+      <button id="btnRefresh" class="wide"><span class="ico">🔄</span> Обновить страницу</button>
+      <button id="btnAdd"     class="wide"><span class="ico">➕</span> Добавить ссылку</button>
+      <button id="btnManage"  class="wide"><span class="ico">✏️</span> Управление ссылками</button>
+    </footer>
+  </aside>
+
+  <div id="overlay" class="overlay hidden"></div>
+  <webview id="webview" allowpopups preload="wv-preload.js" style="flex:1"></webview>
+
+  <!-- диалог: новая ссылка -->
+  <dialog id="dlgAdd" class="modal">
+    <form method="dialog" class="box">
+      <h2>Новая ссылка</h2>
+      <input id="addTitle" placeholder="Имя">
+      <input id="addURL"   placeholder="URL">
+      <menu>
+        <button value="cancel">Отмена</button>
+        <button value="ok" class="primary">Добавить</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <!-- диалог: редактировать -->
+  <dialog id="dlgEdit" class="modal">
+    <form method="dialog" class="box">
+      <h2>Редактировать</h2>
+      <input id="editTitle" placeholder="Имя">
+      <input id="editURL"   placeholder="URL">
+      <menu>
+        <button value="cancel">Отмена</button>
+        <button value="ok" class="primary">Сохранить</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <!-- диалог: управление -->
+  <dialog id="dlgManage" class="modal">
+    <form method="dialog" class="box">
+      <h2>Порядок ссылок</h2>
+      <ul id="manageList"></ul>
+      <menu><button value="cancel" class="primary">Закрыть</button></menu>
+    </form>
+  </dialog>
+
+  <!-- виртуальная клавиатура -->
+  <div id="vk" class="vk-container hidden"></div>
+</body>
+</html>
+

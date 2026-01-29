@@ -11,7 +11,6 @@ app.commandLine.appendSwitch('touch-events','enabled');
 const store = new Store({
   name: 'rms-web-config',
   defaults: {
-    passwordHash: Crypto.SHA256('admin').toString(),
     links: [
       { title: 'Яндекс', url: 'https://ya.ru/' },
       { title: 'RMS',    url: 'https://rms-group.ru/' }
@@ -46,5 +45,4 @@ app.whenReady().then(createWindow);
 // ── IPC для рендера ──────────────────────────────────────────
 ipcMain.handle('config:get',  ()         => store.store);
 ipcMain.handle('config:save', (_, links) => store.set('links', links));
-ipcMain.handle('pass:check',  (_, pass) =>
-  Crypto.SHA256(pass).toString() === store.get('passwordHash'));
+

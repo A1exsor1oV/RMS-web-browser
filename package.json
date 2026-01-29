@@ -10,7 +10,6 @@
   "rpm": "TMPDIR=$HOME/rpmtmp electron-installer-redhat --src=release/RMS-Web-linux-arm64/ --dest=dist --arch=aarch64 --license=MIT --bin=RMS-Web"
   },
   "dependencies": {
-    "crypto-js": "^4.2.0",
     "electron": "^27.1.0",
     "electron-store": "^8.1.0",
     "simple-keyboard": "^3.8.64"
